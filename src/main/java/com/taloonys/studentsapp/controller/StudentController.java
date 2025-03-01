@@ -24,7 +24,7 @@ public class StudentController {
         return studentService.saveStudent(student);
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/find_email/{email}")
     public Student findStudentByEmail(@PathVariable String email) {
         return studentService.findStudentByEmail(email);
     }
