@@ -1,1 +1,1 @@
-Nothing special or useful.. just learning `Spring boot` by building Api onto DB
+Nothing special or useful.. just learning `Spring boot` by building API onto DB
