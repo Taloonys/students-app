@@ -16,6 +16,4 @@ public interface StudentService {
     boolean updateStudent(Student student);
 
     boolean deleteStudent(String email);
-
-    Student getTestBody();
 }

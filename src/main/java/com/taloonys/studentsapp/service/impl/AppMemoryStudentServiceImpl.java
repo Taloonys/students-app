@@ -1,49 +1,41 @@
 package com.taloonys.studentsapp.service.impl;
 
 import com.taloonys.studentsapp.model.Student;
-import com.taloonys.studentsapp.repository.StudentRepo;
+import com.taloonys.studentsapp.repository.StudentDataAccess;
 import com.taloonys.studentsapp.service.StudentService;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Primary
 @Service
 @AllArgsConstructor
-public class StudentServiceImpl implements StudentService {
+public class AppMemoryStudentServiceImpl implements StudentService {
 
-    private final StudentRepo repository;
+    private final StudentDataAccess repository;
 
     @Override
     public List<Student> getStudents() {
-        return repository.findAll();
+        return repository.getStudents();
     }
 
     @Override
     public boolean saveStudent(Student student) {
-        repository.save(student);
-
-        return true;
+        return repository.saveStudent(student);
     }
 
     @Override
     public Student findStudentByEmail(String email) {
-        return repository.findByEmail(email);
+        return repository.findStudentByEmail(email);
     }
 
     @Override
     public boolean updateStudent(Student student) {
-        repository.save(student);
-
-        return true;
+        return repository.updateStudent(student);
     }
 
     @Override
     public boolean deleteStudent(String email) {
-        repository.deleteStudentByEmail(email);
-
-        return true;
+        return repository.deleteStudent(email);
     }
 }

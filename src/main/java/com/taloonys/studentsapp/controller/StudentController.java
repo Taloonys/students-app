@@ -38,9 +38,4 @@ public class StudentController {
     public boolean deleteStudent(@PathVariable String email) {
         return studentService.deleteStudent(email);
     }
-
-    @GetMapping("test_body")
-    public Student getTestBody() {
-        return studentService.getTestBody();
-    }
 }

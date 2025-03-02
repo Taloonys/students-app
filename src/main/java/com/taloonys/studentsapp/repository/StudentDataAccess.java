@@ -50,16 +50,4 @@ public class StudentDataAccess {
         STUDENTS_BUFFER.remove(student);
         return true;
     }
-
-    public Student getTestBody() {
-        var currentDate = LocalDate.now();
-
-        return Student.builder()
-                        .firstName("Name")
-                        .lastName("LastName")
-                        .age(23)
-                        .birthDate(currentDate)
-                        .email("idk@test.com")
-                        .build();
-    }
 }
